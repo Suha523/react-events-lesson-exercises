@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
 class Contact extends Component {
+  displayConvo = () => {
+    this.props.displayConvo(this.props.name)
+  }
   render() {
     return (
       <div >
-        {/* should render a "name" recieved in props */}
-        {/* Should also reieve the displayConvo prop, and call the function onClick */}
+        <span>{this.props.name}: </span>
+        <button onClick={this.displayConvo}>Display convo</button>
       </div>
     );
   }
